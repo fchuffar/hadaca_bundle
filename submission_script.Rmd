@@ -1,0 +1,68 @@
+Please use the `submission_script.Rmd` contained in the `starting_kit` folder as a template to write, run and save your code.
+
+
+## Generate a prediction of A and an estimation of D
+
+In the provided example, we use basic non-negative matrix fatorization (package "NMF"), which consists of minimizing the error term $||D-TA||^2$.
+
+```{r echo=TRUE, results="verbatim", label="generate_zip_file"}
+### DO NOT CHANGE THIS PART
+dataset = readRDS("data.rds")
+D = dataset$D
+metadata = dataset$exp_grp
+
+### PUT YOUR SCRIPT HERE
+library("NMF") #here we use the NMF package
+
+cohorts = names(D)
+Dest = list()
+Aest = list()
+
+for (name in cohorts){
+  cur_D = D[[name]]
+  cur_metadata = metadata[[name]]
+  # Add below your own method
+  results <-
+    nmf(cur_D, rank = 4, 'lee') # here we do a basic nmf factorization with k =4
+  cur_T <- basis(results)
+  cur_A <- coef(results)
+  for (i in 1:dim(cur_A)[2]){
+    cur_A[,i]=cur_A[,i]/sum(cur_A[,i])
+    cur_T[i,]=cur_T[i,]*sum(cur_A[,i])
+  }
+  Aest[[name]] = cur_A
+}
+
+res = Aest 
+
+### DO NOT CHANGE THIS PART, it needs *res* variable
+saveRDS(res, "results.rds")
+zip_filename = paste(sep="",  "results_", format(Sys.time(), format="%m_%d_%Y_%s"), ".zip")
+zip(zip_filename, "results.rds")
+print(zip_filename)
+
+```
+
+## Submit zip file
+
+It generates *`r zip_filename`* submission file.
+
+Submit the zip submission file in the `Participate` tab of the codalab challenge by clicking the `Submit` button.
+
+The metric used to evaluate prediction is the mean squared error (MSE) coded with the provided `scoring_function()`.
+
+On the codalab challenge web page, The *STATUS* become : 
+
+  - Submitting
+  - Submitted	
+  - Running
+  - Finished
+
+When it's finished: 
+
+  - You refresh the page and see you score in the column *SCORE* 
+  - Details for report could be downloaded by clicking *Download output from scoring step*.
+  - Leader borad is updated in the `Results` tab.
+
+
+

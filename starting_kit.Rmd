@@ -1,0 +1,127 @@
+---
+title: "Cancer Heterogeneity Quantification"
+subtitle: "Starting kit"
+author: "Florent Chuffart & Magali Richard"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    number_sections: false
+---
+
+```{r label="header", echo=FALSE, eval=TRUE}
+knitr::opts_chunk$set(collapse=TRUE, comment = "#>", fig.width=9, fig.height=6, eval=TRUE, echo=FALSE, results="hide")
+```
+
+# I. Overview
+
+```{r child='overview.Rmd'}
+```
+
+
+```{r child='data.Rmd'}
+```
+
+
+
+
+
+
+
+# II. How to participate?
+
+## Where to go? 
+
+The challenge is hosted on the codalab platform: https://competitions.codalab.org/
+
+To participate, you need to:
+
+1- create an acount on the codalab platform
+
+2- subscribe to the *Quantification of tumor heterogeneity* challenge
+
+3- constitute teams (or not) and design a team coordinator on the platform
+
+## How to start?
+
+```{r child='get_starting_kit.Rmd'}
+```
+
+
+```{r child='evaluation.Rmd'}
+```
+
+
+
+
+
+
+
+
+
+
+
+# III. Submission (example)
+
+```{r child='submission_script.Rmd'}
+```
+
+
+```{r}
+source("scoring_program/scoring.r")
+```
+
+
+
+# IV. References 
+
+
+Methylation data are simulated *in silico*.
+
+[TCGA] Metadata used to generate confounding effects are coming from the TCGA (The cancer genome atlas). 
+They were extracted from several cohorts of patients. 
+Here are TCGA Study Abbreviations corresponding to each cancer. 
+https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations
+
+[Codalab] https://competitions.codalab.org
+
+[R] https://cran.r-project.org
+
+[RStudio] https://www.rstudio.com
+
+
+
+
+
+```{r, eval=FALSE}
+# SUPPLEMENTAL 
+## Few words about the dataset 
+dataset = readRDS("data.rds")
+D = dataset$D
+metadata = dataset$exp_grp
+
+dim(D[["france"]])
+head(D[["france"]][,1:5])
+dim(metadata[["france"]])
+head(metadata[["france"]])
+
+```
+
+
+
+
+
+
+
+
+
+
+# Session Information
+
+```{r, results="verbatim"}
+sessionInfo()
+```
+
+

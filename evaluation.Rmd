@@ -1,0 +1,20 @@
+---
+output: 
+  rmarkdown::html_document
+---
+
+```{r child='get_starting_kit.Rmd'}
+```
+
+### How to submit?
+
+Now, let's submit your prediction (zip file) in the `Participate` tab of the codalab challenge.
+
+### How is the scoring metric computed?
+
+The discriminating metric will be computed on the A matrix: **mean absolute error** between the estimate and the groundtruth.
+
+
+
+
+ 

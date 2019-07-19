@@ -1,0 +1,37 @@
+title: Quantification of tumor heterogeneity
+description: Successful treatment of cancer is still a challenge and this is partly due to a wide heterogeneity of cancer composition across patient population. Unfortunately, accounting for such heterogeneity is very difficult. Clinical evaluation of tumor heterogeneity often requires the expertise of anatomical pathologists and radiologists.
+
+This challenge is dedicated to the quantification of intra-tumor heterogeneity using appropriate statistical methods on cancer omics data.
+
+In particular, it focuses on estimating cell types and proportion in biological samples based on averaged DNA methylation and full patient history.
+The goal is to explore various statistical methods for source separation/deconvolution analysis (Non-negative Matrix Factorization, Surrogate Variable Analysis, Principal component Analysis, Latent Factor Models, ...).
+start_date: 2019-07-01 9:45:00+00:00
+end_date: 2019-08-15 14:00:00+00:00
+competition_docker_image: raphbacher/codalabsurvival
+image: vignette.png
+has_registration: true
+force_submission_to_leaderboard: true
+disallow_leaderboard_modifying: false
+enable_detailed_results: true
+admin_names: magrichard,FlorentC
+html:
+  evaluation: evaluation.html
+  overview: overview.html
+  get_starting_kit: get_starting_kit.html
+  terms: terms.html
+  data: data.html
+phases:
+  0:
+    auto_migration: false
+    color: blue
+    description: ''
+    is_scoring_only: true
+    label: Exploration
+    max_submissions: 1000000
+    max_submissions_per_day: 1000000
+    phasenumber: 1
+    reference_data: reference_data.zip
+    scoring_program: scoring_program.zip
+    starting_kit: starting_kit.zip
+    start_date: 2019-07-01 14:58:19+00:00
+	

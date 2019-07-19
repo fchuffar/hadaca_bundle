@@ -1,0 +1,2 @@
+command: Rscript $program/scoring.r $input $output
+description: Example competition evaluation program.
