@@ -128,7 +128,7 @@ if (ADMIN_SESSION & CHALLENGER_SESSION) {
     cat("\n", file=output_file, append=FALSE)
     foo = sapply(readLines("competition_head.yaml"), cat, "\n", file=output_file, append=TRUE)
     end_line = length(readLines(output_file))
-    writeLines(readLines(output_file)[-c(1,end_line)], output_file) # remove an unwanted tab character and the first empty line
+    # writeLines(readLines(output_file)[-c(1,end_line)], output_file) # remove an unwanted tab character and the first empty line
     cat(paste("leaderboard:                                        \n" , sep=""), file=output_file, append=TRUE)              
     cat(paste("  columns:                                          \n" , sep=""), file=output_file, append=TRUE)              
     i = 1
