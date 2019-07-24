@@ -167,6 +167,7 @@ if (ADMIN_SESSION & CHALLENGER_SESSION) {
   zip_filename = "scoring_program.zip"
   zip(zip_filename, "scoring_program/metadata")
   zip(zip_filename, "scoring_program/scoring.r")    
+  zip(zip_filename, "scoring_program/scoring.py")    
   
   zip_filename = "starting_kit.zip"
   zip(zip_filename, "data.rds")
