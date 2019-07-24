@@ -5,8 +5,8 @@
 
 ### DO NOT CHANGE THIS PART
 dataset = readRDS("data.rds")
-D = dataset$D
-metadata = dataset$exp_grp
+D = dataset
+#metadata = dataset$exp_grp
 
 ### PUT YOUR SCRIPT HERE
 library("NMF") #here we use the NMF package
@@ -17,7 +17,7 @@ Aest = list()
 
 for (name in cohorts){
   cur_D = D[[name]]
-  cur_metadata = metadata[[name]]
+  #cur_metadata = metadata[[name]]
   # Add below your own method
   results <-
     nmf(cur_D, rank = 4, 'lee') # here we do a basic nmf factorization with k =4

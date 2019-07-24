@@ -6,7 +6,7 @@
 ##############################################
 ### SCORING
 
-install.packages("combinat")
+install.packages("combinat", repos='http://cran.us.r-project.org')
 
 MAE <- function(M1, M2) {
   mean(abs(M1 - M2))
@@ -79,7 +79,7 @@ if (ADMIN_SESSION) {
   
   # Load reference (ground truth)
   ref_res = readRDS(data_full_filename)
-  Aref = ref_res$Aref
+  Aref = ref_res
   
   # define the scores files
   #output_file <-paste0(output,"/scores.txt")

@@ -100,12 +100,11 @@ https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbrevia
 ## Few words about the dataset 
 dataset = readRDS("data.rds")
 D = dataset$D
-metadata = dataset$exp_grp
+
 
 dim(D[["france"]])
 head(D[["france"]][,1:5])
-dim(metadata[["france"]])
-head(metadata[["france"]])
+
 
 ```
 

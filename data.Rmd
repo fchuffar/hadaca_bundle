@@ -14,25 +14,19 @@ Participants have to identify an **estimate of A matrix**, with the correct numb
 
 ```{r echo=FALSE}
 dataset = readRDS("data.rds")
-D = dataset$D
-metadata = dataset$exp_grp
 ```
 
-- D is composed of  `r length(names(D))` cohorts named **`r names(D)[[1]]`**, **`r names(D)[[2]]`**, **`r names(D)[[3]]`** and **`r names(D)[[4]]`**
+- dataset is composed of  `r length(names(dataset))` cohorts named **`r names(dataset)[[1]]`**, **`r names(dataset)[[2]]`**
 
-- **`r names(D)[1]`** is composed of `r ncol(D[[1]])` patients and `r nrow(D[[1]])` methylation sites (beta-values), with cell types proportions highly variable between patients.
+- **`r names(dataset)[1]`** is composed of `r ncol(dataset[[1]])` patients and `r nrow(dataset[[1]])` methylation sites (beta-values), with cell types proportions highly variable between patients.
 
-- **`r names(D)[2]`** is composed of `r ncol(D[[2]])` patients and `r nrow(D[[2]])` methylation sites (beta-values), with cell types proportions lowly variable between patients.
+- **`r names(dataset)[2]`** is composed of `r ncol(dataset[[2]])` patients and `r nrow(dataset[[2]])` methylation sites (beta-values), with cell types proportions lowly variable between patients.
 
-- **`r names(D)[3]`** is composed of `r ncol(D[[3]])` patients and `r nrow(D[[3]])` methylation sites (beta-values), with cell types proportions highly variable between patients.
-
-- **`r names(D)[4]`** is composed of `r ncol(D[[4]])` patients and `r nrow(D[[4]])` methylation sites (beta-values), with cell types proportions lowly variable between patients.
 
 ```{r results="verbatim", echo=TRUE}
-dim(D[["france"]])
-head(D[["france"]][,1:5])
-dim(metadata[["france"]])
-head(metadata[["france"]])
+dim(dataset[["france"]])
+head(dataset[["france"]][,1:5])
+
 ```
 
 

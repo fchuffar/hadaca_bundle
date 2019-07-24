@@ -1,3 +1,5 @@
+DEMO
+
 Successful treatment of cancer is still a challenge and this is partly due to a wide heterogeneity of cancer composition across patient population. Unfortunately, accounting for such heterogeneity is very difficult. Clinical evaluation of tumor heterogeneity often requires the expertise of anatomical pathologists and radiologists.
 
 This challenge is dedicated to the quantification of intra-tumor heterogeneity using appropriate statistical methods on cancer omics data.
